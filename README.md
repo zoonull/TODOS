@@ -20,7 +20,8 @@
 |    v1   |           BASIC Javascript, HTML, CSS          |      Closed      |     None    |
 |    v2   | Javascript(USING DOM Queryselector), HTML, CSS |      Closed      |     None    |
 |    v3   |              Conversion ES5 to ES6             |     Postponed    | Some issues |
-|    v4   |            Conversion ES6 to Angular           | under developing |             |
+|   v3.1  |          Conversion ES6 to TypeScript          |     Postponed    | Some issues |
+|    v4   |        Conversion TypeScript to Angular        | under developing |             |
 
 
 
