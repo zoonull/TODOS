@@ -23,7 +23,7 @@
       </ul>
       <div class="col-xs-6">
         <label class="i-checks" style="padding-left: 20px">
-          <input id="chk-allComplete" type="checkbox" (click)="toggleAllCompleted()"><i></i><span>Mark all as complete</span>
+          <input id="chk-allComplete" type="checkbox" (click)="toggleAllCompleted($event.target.checked)"><i></i><span>Mark all as complete</span>
         </label>
       </div>
       <div class="col-xs-6 text-right">

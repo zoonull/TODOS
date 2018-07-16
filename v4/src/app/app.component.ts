@@ -46,9 +46,14 @@ export class AppComponent implements OnInit{
     this.todos = this.todos.filter(todo => todo.completed !== true);
   }
 
-  toggleAllCompleted() {
+  toggleAllCompleted(v: boolean) {
     console.log('[All toggle clicked]');
-    this.todos = this.todos.map(todo => Object.assign({}, todo, { completed : true ? true : !todo.completed }));
+    console.log('[All toggle Status]', v);
+    if(v == true){
+      this.todos = this.todos.map(todo => Object.assign({}, todo, { completed : true ? true : !todo.completed }));
+    }else if(v == false){
+      this.todos = this.todos.map(todo => Object.assign({}, todo, { completed : true ? false : !todo.completed }));
+    }
   }
 
   getCount(){
