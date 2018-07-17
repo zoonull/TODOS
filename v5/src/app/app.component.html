@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="title">Todos</h1>
+      <input id="input-todo" class="form-control input-lg" placeholder="What needs to be done?" (keyup.enter)="addTodo($event.target.value)" [(ngModel)]="content" autofocus>
+      <ul class="nav nav-xs nav-pills">
+        <li *ngFor="let list of navList" [class.active]="curNavList===list" (click)="curNavList=list">
+          <a>{{ list }}</a>
+        </li>
+      </ul>
+      <ul id="todo-list" class="list-group">
+        <li class="list-group-item" *ngFor="let todo of todos | todosFilter : curNavList ">
+          <div class="hover-anchor">
+            <a class="hover-action text-muted">
+              <span class="glyphicon glyphicon-remove-circle pull-right" (click)="removeTodo(todo.id)"></span>
+            </a>
+            <label class="i-checks" [for]="todo.id">
+              <input type="checkbox" [id]="todo.id" [checked]="todo.completed" (change)="toggleTodoCompleted(todo.id)"><i></i>
+              <span>{{ todo.content }}</span>
+            </label>
+          </div>
+        </li>
+      </ul>
+      <div class="col-xs-6">
+        <label class="i-checks" style="padding-left: 20px">
+          <input id="chk-allComplete" type="checkbox" (click)="toggleAllCompleted($event.target.checked)"><i></i><span>Mark all as complete</span>
+        </label>
+      </div>
+      <div class="col-xs-6 text-right">
+        <button id="btn-removeCompletedTodos" class="btn btn-default btn-xs" (click)="removeComTodo()">
+          Clear completed (<span id="completedTodos">{{ getCount() }}</span>)
+        </button>
+        <strong id="activeTodos">{{leftCount()}}</strong> items left
+      </div>
+    </div>
+  </div>
+</div>
