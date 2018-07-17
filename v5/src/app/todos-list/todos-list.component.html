@@ -1,0 +1,13 @@
+<ul id="todo-list" class="list-group">
+  <li class="list-group-item" *ngFor="let todo of todos | todosFilter : curNavList ">
+    <div class="hover-anchor">
+      <a class="hover-action text-muted">
+        <span class="glyphicon glyphicon-remove-circle pull-right" (click)="removeTodo.emit(this.todo.id)"></span>
+      </a>
+      <label class="i-checks" [for]="todo.id">
+        <input type="checkbox" [id]="todo.id" [checked]="todo.completed" (click)="toggleTodoCompleted.emit(this.todo.id)"><i></i>
+        <span>{{ todo.content }}</span>
+      </label>
+    </div>
+  </li>
+</ul>

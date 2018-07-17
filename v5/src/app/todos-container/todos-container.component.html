@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="title">Todos</h1>
+      <app-todos-form (addTodo)="this.addTodo($event)"></app-todos-form>
+      <app-todos-nav [navList]="this.navList" [curNavList]="this.curNavList" (curNavListPush)="this.curNavList=($event)"></app-todos-nav>
+      <app-todos-list [todos]="this.todos" [curNavList]="this.curNavList" (removeTodo)="this.removeTodo($event)" (toggleTodoCompleted)="this.toggleTodoCompleted($event)"></app-todos-list>
+      <app-todos-footer [leftC]="this.leftCount()" [getC]="this.getCount()" (clickAll)="this.toggleAllCompleted($event)" (removeCom)="this.removeComTodo($event)"></app-todos-footer>
+    </div>
+  </div>
+</div>
