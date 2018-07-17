@@ -1,0 +1,5 @@
+<ul class="nav nav-xs nav-pills">
+  <li *ngFor="let list of navList" [class.active]="curNavList===list" (click)="curNavListPush.emit(this.list)">
+    <a>{{ list }}</a>
+  </li>
+</ul>
